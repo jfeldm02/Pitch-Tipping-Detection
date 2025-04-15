@@ -9,6 +9,8 @@ This project proposes a methodology for **classifying baseball pitch types** usi
 
 By combining **pose estimation**, **time-series modeling**, and **explainable ML techniques** such as **t-SNE** and **UMAP**, this study provides both predictive models and interpretability tools to aid hitters in exploiting tells and helping pitchers eliminate them.
 
+![image](https://github.com/user-attachments/assets/bdbce777-397a-4894-b55a-4d2c198223f2)
+
 ---
 
 ## Repository Structure
@@ -23,7 +25,8 @@ By combining **pose estimation**, **time-series modeling**, and **explainable ML
 | `data_exploration.ipynb`     | Explains model predictions through visualizations and feature analysis     |
 | `dependencies.txt`           | Required Python packages and versions                                      |
 | `pitcher_sample_datasets/`   | Sample biomechanical data for experimentation                             |
-| `sample_video_set/`          | Organized pitching videos in subdirectories by pitch type                 |
+| `Fastball.zip`          | A few sample Brayan Bello fastball videos                |
+| `Changeup.zip`          | A few sample Brayan Bello changeup videos                |
 
 ---
 
@@ -107,6 +110,7 @@ pip install -r dependencies.txt
    ![image](https://github.com/user-attachments/assets/a023845f-c1c4-4a57-babf-3ea0498ddd7a)
 
 3. **Configure and Run Data Pipeline**  
+   - Separate your video subdirectories into their own standalone directory. The script will read all directories present and present an error if other folders are present.  
    - Open `main_data_acquisition.py` and fill in the following variables:
 
      ```python
