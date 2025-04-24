@@ -30,24 +30,23 @@ either clip the videos prior to use or investigate the associated pose_estimatio
 
 # User Variables:
 # pitcher_name = 'Bello_Brayan' # This variable isn't acually used but good to keep track of in your file name paths
-pitcher_height = 71 # pitcher's height in inches necessary for data scaling
-pitcher_handedness_right = False # True if the pitcher throws with his right hand 
+pitcher_height = 72 # pitcher's height in inches necessary for data scaling
+pitcher_handedness_right = True # True if the pitcher throws with his right hand 
 # Folder with subfolders labeled by pitcher's pitch containing all organized video samples 
-main_directory = '/Users/justinfeldman/Desktop/Cortes_Nestor'
+main_directory = '.../your_path_sample_pitcher'
 # Raw ModelPipe human pose estimation data saved here as a JSON file. Useful for separate potential future analyses of data 
-raw_data_output = '/Users/justinfeldman/Library/Mobile Documents/com~apple~CloudDocs/CS6140/Final Project/Pitcher Data/Cortes_Nestor/cortes_nestor_unprocessed.json'
+raw_data_output = '.../your_path_unprocessed.json'
 # Processed ModelPipe human pose estimation data saved here as a JSON file. Necessary for this project's models
-processed_data_output = '/Users/justinfeldman/Library/Mobile Documents/com~apple~CloudDocs/CS6140/Final Project/Pitcher Data/Cortes_Nestor/cortes_nestor_unprocessed.json'
+processed_data_output = '.../your_path_processed.json'
 # Use same video as used in video_cropping_calibration.ipynb
-good_video_sample = '/Users/justinfeldman/Desktop/Cortes_Nestor/Fastball/game745701_9bdb16c9-e7f8-45c7-b27a-504d392cb59a.mp4' 
-x_percent = 0.27 # Video cropping variable. Copy in from video_cropping_calibration.ipynb
-y_percent = 0.4 # Video cropping variable. Copy in from video_cropping_calibration.ipynb 
-width_percent = 0.25 # Video cropping variable. Copy in from video_cropping_calibration.ipynb
-height_percent = 0.47 # Video cropping variable. Copy in from video_cropping_calibration.ipynb 
+good_video_sample = '.../your_path.mp4'
+x_percent = 0.25 # Video cropping variable. Copy in from video_cropping_calibration.ipynb
+y_percent = 0.3 # Video cropping variable. Copy in from video_cropping_calibration.ipynb 
+width_percent = 0.4 # Video cropping variable. Copy in from video_cropping_calibration.ipynb
+height_percent = 0.6 # Video cropping variable. Copy in from video_cropping_calibration.ipynb 
 
 def main_data_acquisition(pitcher_height, pitcher_handedness_right, main_directory, raw_data_output, processed_data_output, 
                           good_video_sample, x_percent, y_percent, width_percent, height_percent):
-    
     # Outputs raw MediaPose data file
     pose_estimation.process_videos_to_json(
         base_directory=main_directory,

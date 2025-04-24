@@ -135,10 +135,29 @@ def data_processing(json_file_path, pitcher_height, pitcher_handedness_right, pr
         # Load individual video dataframe
         dataframe_original = json_to_dataframe(data=data, video_index=video)
 
+        # Check early if dataframe is empty or has no pitch_type
+        if dataframe_original.empty:
+            print(f"Video {video} dataframe is empty, skipping.")
+            continue
+        
+        # Check if pitch_type exists and is not empty - MOVED UP BEFORE ACCESSING pitch_type
+        if ('pitch_type' not in dataframe_original.columns or 
+            dataframe_original['pitch_type'].empty or 
+            len(dataframe_original['pitch_type']) == 0):
+            print(f"Video {video} has no pitch_type data, skipping.")
+            continue
+            
+        # Get pitch_type safely after checking
+        try:
+            pitch_type = dataframe_original['pitch_type'].iloc[0]
+        except IndexError:
+            print(f"Video {video} has pitch_type column but it's empty or inaccessible, skipping.")
+            continue
+
         # Store a copy in unprocessed dataframes
         dataframes_unprocessed.append({
             'dataframe': dataframe_original,
-            'pitch_type': dataframe_original['pitch_type'].iloc[0],
+            'pitch_type': pitch_type,
             'video_index': video,
             'filename': dataframe_original['filename'].iloc[0]
         })

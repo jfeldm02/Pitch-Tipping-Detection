@@ -105,7 +105,7 @@ def detect_pitcher(frame, template_img, similarity_threshold=0.25):
         # print(f"Warning: SIFT feature detection failed: {e}")
         feature_score = 0
     
-    # Method 3: Mean-Squared Error (MSE) - simple alternative to SSIM
+    # Method 3: Mean-Squared Error (MSE)
     # Calculate MSE between the two images
     try:
         from skimage.metrics import structural_similarity as ssim
@@ -119,7 +119,6 @@ def detect_pitcher(frame, template_img, similarity_threshold=0.25):
     # Combine scores (weighted average)
     combined_score = (0.5 * max_val) + (0.3 * feature_score) + (0.2 * ssim_score)
     
-    # Print the score for debugging
     # print(f"Similarity score: {combined_score:.4f} (threshold: {similarity_threshold})")
     
     # Return True if the combined score exceeds the threshold
@@ -144,7 +143,6 @@ def pose_processing_worker(input_video_path, pitch_type, filename, template_img,
     # Initialize mp packages
     mp_pose = mp.solutions.pose
     
-    # Open the video file
     cap = cv2.VideoCapture(input_video_path)
     
     # Read the first frame to check for pitcher
