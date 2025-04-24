@@ -82,8 +82,19 @@ These techniques offer visual, interpretable insight into pitch-tipping indicato
 ---
 
 ## Results  
-*[Add training/test accuracy plots here]*  
-*[Add sample UMAP/t-SNE plots highlighting key indicators]*  
+![image](https://github.com/user-attachments/assets/f626e04d-d42d-41a6-900e-1aac6849d414)
+
+#### The scatterplot above shows the train and test model results for 7 MLB pitchers based on their 2024 regular season data. According to the plot, Garrett Crochet has the highest indicator of pitch-tipping and Tarik Skubal has the lowest.
+
+![image](https://github.com/user-attachments/assets/6cac69b2-82a5-4054-af42-bbdeb633590c)
+
+#### Applying this insight to the data_exploration file, you can see which landmarks create interesting clustering situations. Ideally, you would find color clustering, but in Garrett Crochet's right foot example shown above, it appears interesting that the circled cluster does not have many changeups or sweepers, pitches that are significantly slower in velocity than the cutters and fastballs. 
+
+![image](https://github.com/user-attachments/assets/22d8b9f2-678c-43b7-b958-c4b42579d3e7)
+
+#### The next investigatory step could be to take a look at right foot's average motion plot to see if there's any actionable discrepancies. Around frame 80, there does in fact seem to be some differential between his fastball and cutter's y-coordinates compared to his changeup and sweeper. His fastball's y-coordinate looks to be about 6 inches higher than the sweeper and cutter at frame 80.
+
+#### This is the theoretical approach you can take with this methods this project provides.
 
 ---
 
@@ -161,15 +172,8 @@ This project’s focus was on **model explainability**, aiming to uncover **why*
 - Apply this framework to new areas like:
   - Injury/fatigue indicators  
   - Performance slump prediction  
-  - Pitch velocity estimation   
-
----
-
-### References
-
-- **Cao et al., 2019** — *OpenPose: Realtime Multi-Person 2D Pose Estimation using Part Affinity Fields.* IEEE Transactions on PAMI  
-- **Fawaz et al., 2019** — *Deep learning for time series classification: a review.* Data Mining and Knowledge Discovery, 33(4), Springer  
-
+  - Pitch velocity estimation
+  
 ---
 
 ### More Information
