@@ -27,6 +27,7 @@ By combining **pose estimation**, **time-series modeling**, and **explainable ML
 | `pitcher_sample_datasets/`   | Sample biomechanical data for experimentation                             |
 | `Fastball.zip`          | A few sample Brayan Bello fastball videos                |
 | `Changeup.zip`          | A few sample Brayan Bello changeup videos                |
+| `Sample Pitcher Data.zip`          | Sample processed pitcher data                |
 
 ---
 
