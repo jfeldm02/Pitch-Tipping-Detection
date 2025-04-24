@@ -112,7 +112,7 @@ pip install -r dependencies.txt
 1. **Download all files** and place them in your directory of choice.
 
 2. **Use a Sample Processed Dataset** or **Calibrate Cropping Window**  
-   - Select a .json file from `pitcher_sample_datasets/` and skip to **Step 4** or...
+   - Select a .json file from `Sample Pitcher Data.zip` and skip to **Step 4** or...
    - Select a good sample video from either your own dataset or the provided sample dataset.  
    - This video should start with a standard pitching angle, as shown below.  
    - Open `video_cropping_calibration.ipynb`, provide the video path, and adjust the cropping variables to find the optimal range, also as shown below.  
