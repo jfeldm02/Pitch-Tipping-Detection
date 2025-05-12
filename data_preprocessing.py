@@ -62,10 +62,10 @@ def json_to_dataframe(data, video_index):
                     row[f'{landmark_name}_presence'] = lm[3]  # visibility
                 else:
                     # If landmark data is incomplete, add NaN values
-                    row[f'{landmark_name}_x'] = None
-                    row[f'{landmark_name}_y'] = None
-                    row[f'{landmark_name}_z'] = None
-                    row[f'{landmark_name}_presence'] = None
+                    row[f'{landmark_name}_x'] = 0
+                    row[f'{landmark_name}_y'] = 0
+                    row[f'{landmark_name}_z'] = 0
+                    row[f'{landmark_name}_presence'] = 0
             else:
                 # If landmark is missing or out of range, continue to next landmark
                 continue
